@@ -6,7 +6,8 @@ frase = gets.chomp
 
 puts "Каким способом зашифровать?
 1. MD5
-2. SHA1"
+2. SHA1
+3. SHA2"
 
 way = gets.to_i
 
@@ -15,6 +16,9 @@ if way == 1
   puts "Вот что получилось: #{result}"
 elsif way == 2
   result = Digest::SHA1.hexdigest frase
+  puts "Вот что получилось: #{result}"
+elsif way == 3
+  result = Digest::SHA2.hexdigest frase
   puts "Вот что получилось: #{result}"
 else 
   puts "Неправильно, выберите снова."
